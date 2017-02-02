@@ -2,6 +2,7 @@ package main
 
 import (
 	"bufio"
+	"io/ioutil"
 	"os"
 	"os/exec"
 	"time"
@@ -23,21 +24,11 @@ func main() {
 }
 
 func readMarkDown(filename string) (content string) {
-	fo, err := os.Open(filename)
+	dat, err := ioutil.ReadFile(filename)
 	if err != nil {
 		panic(err)
 	}
-	defer func() {
-		if err := fo.Close(); err != nil {
-			panic(err)
-		}
-	}()
-	r4 := bufio.NewReader(fo)
-	r3, err := r4.ReadByte()
-	if err != nil {
-		panic(err)
-	}
-	content = string(r3)
+	content = string(dat)
 	return
 }
 
