@@ -15,7 +15,7 @@ func main() {
 	//create markdown file
 	//writeMarkDown(tempDate, content)
 	//println(tempDate + ".md is completed.")
-	println(readMarkDown("README.md"))
+	//println(readMarkDown("README.md"))
 
 	//gitPull()
 	gitAddAll()

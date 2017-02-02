@@ -1,0 +1,229 @@
+package main
+
+import (
+	"bytes"
+	"fmt"
+	"io"
+	"io/ioutil"
+	"net/http"
+	"net/url"
+	"os"
+	"path/filepath"
+	"regexp"
+	"strconv"
+	"strings"
+)
+
+var (
+	userAgent = "Mozilla/5.0 (Windows NT 6.1; rv:2.0.1) Gecko/20100101 Firefox/4.0.1"
+)
+
+// GHToc GitHub TOC
+type GHToc []string
+
+//Output TOC to the console
+func (toc *GHToc) Output() {
+	for _, tocItem := range *toc {
+		fmt.Println(tocItem)
+	}
+	fmt.Println()
+}
+
+// GHDoc GitHub document
+type GHDoc struct {
+	Path     string
+	AbsPaths bool
+	Depth    int
+}
+
+// NewGHDoc create GHDoc
+func NewGHDoc(Path string, AbsPaths bool, Depth int) *GHDoc {
+	return &GHDoc{Path, AbsPaths, Depth}
+}
+
+// GetToc return GHToc for a document
+func (doc *GHDoc) GetToc() *GHToc {
+	htmlBody := GetHTMLBody(doc.Path)
+	if doc.AbsPaths {
+		return GrabToc(htmlBody, strings.Replace(doc.Path, ".md", "", -1), doc.Depth)
+	}
+	return GrabToc(htmlBody, "", doc.Depth)
+}
+
+// doHTTPReq executes a particullar http request
+func doHTTPReq(req *http.Request) string {
+	req.Header.Set("User-Agent", userAgent)
+	client := &http.Client{}
+	resp, err := client.Do(req)
+	if err != nil {
+		return ""
+	}
+
+	defer resp.Body.Close()
+	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		return ""
+	}
+
+	return string(body)
+}
+
+// Executes HTTP GET request
+func httpGet(urlPath string) string {
+	req, err := http.NewRequest("GET", urlPath, nil)
+	if err != nil {
+		return ""
+	}
+	return doHTTPReq(req)
+}
+
+// httpPost executes HTTP POST with file content
+func httpPost(urlPath string, filePath string) string {
+	file, err := os.Open(filePath)
+	if err != nil {
+		return ""
+	}
+	defer file.Close()
+
+	body := &bytes.Buffer{}
+	io.Copy(body, file)
+
+	req, err := http.NewRequest("POST", urlPath, body)
+	req.Header.Set("Content-Type", "text/plain")
+
+	return doHTTPReq(req)
+}
+
+// removeStuf trims spaces, removes new lines and code tag from a string
+func removeStuf(s string) string {
+	res := strings.Replace(s, "\n", "", -1)
+	res = strings.Replace(res, "<code>", "", -1)
+	res = strings.Replace(res, "</code>", "", -1)
+	res = strings.TrimSpace(res)
+
+	return res
+}
+
+// Public
+
+// EscapeSpecChars Escapes special characters
+func EscapeSpecChars(s string) string {
+	specChar := []string{"\\", "`", "*", "_", "{", "}", "#", "+", "-", ".", "!"}
+	res := s
+
+	for _, c := range specChar {
+		res = strings.Replace(res, c, "\\"+c, -1)
+	}
+	return res
+}
+
+// GetHTMLBody If path is url then just executes HTTP GET and
+// Returns html for this url.
+//
+// If path is a local path then sends file to the GitHub's
+// Markdown -> Html converter and returns html.
+func GetHTMLBody(path string) string {
+	if IsURL(path) {
+		return httpGet(path)
+	}
+	return ConvertMd2Html(path)
+}
+
+// IsURL Check if string is url
+func IsURL(candidate string) bool {
+	u, err := url.Parse(candidate)
+	if err != nil || u.Scheme == "" {
+		return false
+	}
+	return true
+}
+
+// ConvertMd2Html Sends Markdown to the github converter
+// and returns html
+func ConvertMd2Html(localpath string) string {
+	return httpPost("https://api.github.com/markdown/raw", localpath)
+}
+
+// GrabToc Create TOC by html from github
+func GrabToc(html string, absPath string, Depth int) *GHToc {
+	re := `(?si)<h(?P<num>[1-6])>\s*` +
+		`<a\s*id="user-content-[^"]*"\s*class="anchor"\s*` +
+		`href="(?P<href>[^"]*)"[^>]*>\s*` +
+		`.*?</a>(?P<name>.*?)</h`
+	r := regexp.MustCompile(re)
+
+	toc := GHToc{}
+	groups := make(map[string]string)
+	for _, match := range r.FindAllStringSubmatch(html, -1) {
+		// fill map for groups
+		for i, name := range r.SubexpNames() {
+			if i == 0 || name == "" {
+				continue
+			}
+			groups[name] = removeStuf(match[i])
+		}
+		// format result
+		n, _ := strconv.Atoi(groups["num"])
+		if Depth > 0 && n > Depth {
+			continue
+		}
+
+		link := groups["href"]
+		if len(absPath) > 0 {
+			link = absPath + link
+		}
+		tocItem := strings.Repeat("  ", n) + "* " +
+			"[" + EscapeSpecChars(removeStuf(groups["name"])) + "]" +
+			"(" + link + ")"
+		//fmt.Println(tocItem)
+		toc = append(toc, tocItem)
+	}
+
+	return &toc
+}
+
+//WalkDir 获取指定目录及所有子目录下的所有文件，可以匹配后缀过滤。
+func WalkDir(dirPth, suffix string) (files []string, err error) {
+	files = make([]string, 0, 30)
+	suffix = strings.ToUpper(suffix)                                                     //忽略后缀匹配的大小写
+	err = filepath.Walk(dirPth, func(filename string, fi os.FileInfo, err error) error { //遍历目录
+		if err != nil { //忽略错误
+			return err
+		}
+		if fi.IsDir() { // 忽略目录
+			return nil
+		}
+		if strings.HasSuffix(strings.ToUpper(fi.Name()), suffix) {
+			files = append(files, strings.Replace(strings.Replace(filename, dirPth, "", -1), "\\", "\\\\", -1))
+		}
+		return nil
+	})
+	return files, err
+}
+
+func main() {
+	depth := 0
+	documentPath := "D:\\Github\\Yupae\\"
+	paths, err := WalkDir(documentPath, ".md")
+	if err != nil {
+		panic(err)
+	}
+	pathsCount := len(paths)
+	if pathsCount == 1 {
+		fmt.Println("\nTable of Contents\n-----------------\n")
+	} else {
+		depth = 1
+		fmt.Println("\nCatalog Index\n=============\n")
+	}
+	// read file paths | urls from args
+	absPathsInToc := pathsCount > 1
+	ch := make(chan *GHToc, pathsCount)
+	for _, p := range paths {
+		ghdoc := NewGHDoc(p, absPathsInToc, depth)
+		go func(path string) { ch <- ghdoc.GetToc() }(p)
+	}
+	for i := 1; i <= pathsCount; i++ {
+		toc := <-ch
+		toc.Output()
+	}
+}
