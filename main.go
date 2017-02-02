@@ -13,12 +13,32 @@ func main() {
 
 	//create markdown file
 	//writeMarkDown(tempDate, content)
-	println(tempDate + ".md is completed.")
+	//println(tempDate + ".md is completed.")
+	println(readMarkDown("README.md"))
 
 	//gitPull()
 	gitAddAll()
 	gitCommit()
 	gitPush()
+}
+
+func readMarkDown(filename string) (content string) {
+	fo, err := os.Open(filename)
+	if err != nil {
+		panic(err)
+	}
+	defer func() {
+		if err := fo.Close(); err != nil {
+			panic(err)
+		}
+	}()
+	r4 := bufio.NewReader(fo)
+	r3, err := r4.ReadByte()
+	if err != nil {
+		panic(err)
+	}
+	content = string(r3)
+	return
 }
 
 func writeMarkDown(fileName, content string) {
