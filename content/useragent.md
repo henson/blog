@@ -1,9 +1,9 @@
 ---
-keywords: useragent
-title: 爬虫常用的浏览器 UserAgent
+keywords: useragent,爬虫,Safari,Firefox,Chrome
+title: 爬虫常用的浏览器UserAgent
 ---
 
-爬虫常用的浏览器 UserAgent
+爬虫常用的浏览器UserAgent
 =========================
 
 1.为什么需要修改UserAgent
