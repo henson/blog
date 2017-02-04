@@ -2,113 +2,39 @@ package main
 
 import (
 	"bufio"
-	"io/ioutil"
+	"fmt"
+	"log"
 	"os"
-	"os/exec"
-	"time"
 )
 
-var tempDate = time.Now().Format("2006-01-02")
-
 func main() {
-
-	//create markdown file
-	//writeMarkDown(tempDate, content)
-	//println(tempDate + ".md is completed.")
-	//println(readMarkDown("README.md"))
-
-	//gitPull()
-	gitAddAll()
-	gitCommit()
-	gitPush()
-}
-
-func readMarkDown(filename string) (content string) {
-	dat, err := ioutil.ReadFile(filename)
+	file, err := os.Open("README.md")
 	if err != nil {
-		panic(err)
+		log.Fatal(err)
 	}
-	content = string(dat)
-	return
-}
+	scanner := bufio.NewScanner(file)
 
-func writeMarkDown(fileName, content string) {
-	// open output file
-	fo, err := os.Create(fileName + ".md")
-	if err != nil {
-		panic(err)
-	}
-	// close fo on exit and check for its returned error
-	defer func() {
-		if err := fo.Close(); err != nil {
-			panic(err)
+	// 缺省的分隔函数是bufio.ScanLines,我们这里使用ScanWords。
+	// 也可以定制一个SplitFunc类型的分隔函数
+	//scanner.Split(bufio.ScanWords)
+	var temp string
+	for {
+		// scan下一个token.
+		success := scanner.Scan()
+		if success == false {
+			// 出现错误或者EOF是返回Error
+			err = scanner.Err()
+			if err == nil {
+				//log.Println("Scan completed and reached EOF")
+				break
+			} else {
+				log.Fatal(err)
+			}
 		}
-	}()
-	// make a write buffer
-	w := bufio.NewWriter(fo)
-	w.WriteString(content)
-	w.Flush()
-}
-
-func gitPull() {
-	app := "git"
-	arg0 := "pull"
-	arg1 := "origin"
-	arg2 := "master"
-	cmd := exec.Command(app, arg0, arg1, arg2)
-	out, err := cmd.Output()
-
-	if err != nil {
-		println(err.Error())
-		return
+		// 得到数据，Bytes() 或者 Text()
+		//fmt.Println("Line found:", scanner.Text())
+		temp = temp + scanner.Text() + "\n"
+		// 再次调用scanner.Scan()发现下一个token
 	}
-
-	print(string(out))
-}
-
-func gitAddAll() {
-	app := "git"
-	arg0 := "add"
-	arg1 := "."
-	cmd := exec.Command(app, arg0, arg1)
-	out, err := cmd.Output()
-
-	if err != nil {
-		println(err.Error())
-		return
-	}
-
-	print(string(out))
-}
-
-func gitCommit() {
-	app := "git"
-	arg0 := "commit"
-	arg1 := "-am"
-	arg2 := tempDate
-	cmd := exec.Command(app, arg0, arg1, arg2)
-	out, err := cmd.Output()
-
-	if err != nil {
-		println(err.Error())
-		return
-	}
-
-	print(string(out))
-}
-
-func gitPush() {
-	app := "git"
-	arg0 := "push"
-	arg1 := "origin"
-	arg2 := "master"
-	cmd := exec.Command(app, arg0, arg1, arg2)
-	out, err := cmd.Output()
-
-	if err != nil {
-		println(err.Error())
-		return
-	}
-
-	print(string(out))
+	fmt.Println(temp)
 }
