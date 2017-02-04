@@ -24,9 +24,9 @@ func main() {
 
 `
 	content = preface
-	content = content + "## 杂项\n" + catalog("content")
-	content = content + "## Golang\n" + catalog("golang")
-	content = content + "## 树莓派\n" + catalog("raspberrypi")
+	content = content + "## 杂项\n\n" + catalog("content") + "\n"
+	content = content + "## Golang\n\n" + catalog("golang") + "\n"
+	content = content + "## 树莓派\n\n" + catalog("raspberrypi") + "\n"
 	writeMarkDown("README", content)
 	println("READMD.md is rewrited.")
 
