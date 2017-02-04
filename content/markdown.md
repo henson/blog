@@ -1,6 +1,6 @@
 ---
 keywords: markdown
-title: MarkDown 语法
+title: Github MarkDown语法
 ---
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
