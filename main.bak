@@ -15,21 +15,11 @@ func main() {
 	//create markdown file
 	//writeMarkDown(tempDate, content)
 	//println(tempDate + ".md is completed.")
-	//println(readMarkDown("README.md"))
 
 	//gitPull()
 	gitAddAll()
 	gitCommit()
 	gitPush()
-}
-
-func readMarkDown(filename string) (content string) {
-	dat, err := ioutil.ReadFile(filename)
-	if err != nil {
-		panic(err)
-	}
-	content = string(dat)
-	return
 }
 
 func writeMarkDown(fileName, content string) {
