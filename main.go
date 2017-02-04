@@ -17,7 +17,7 @@ var tempDate = time.Now().Format("2006-01-02")
 func main() {
 	var preface, content string
 	preface = `---
-layout: preface
+layout: default
 ---
 
 序
