@@ -16,17 +16,17 @@ var tempDate = time.Now().Format("2006-01-02")
 
 func main() {
 	var preface, content string
-	preface = `# 序
+	preface = `## 序
 
 其实没什么想说的，但总要写点什么...
 
-# 目录
+## 目录
 
 `
 	content = preface
-	content = content + "## 杂项\n\n" + catalog("content") + "\n"
-	content = content + "## Golang\n\n" + catalog("golang") + "\n"
-	content = content + "## 树莓派\n\n" + catalog("raspberrypi") + "\n"
+	content = content + "### 杂项\n\n" + catalog("content") + "\n"
+	content = content + "### Golang\n\n" + catalog("golang") + "\n"
+	content = content + "### 树莓派\n\n" + catalog("raspberrypi") + "\n"
 	writeMarkDown("README", content)
 	println("READMD.md is rewrited.")
 
