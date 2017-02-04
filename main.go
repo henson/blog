@@ -16,8 +16,7 @@ var tempDate = time.Now().Format("2006-01-02")
 
 func main() {
 	var preface, content string
-	preface = `
-序
+	preface = `序
 ===
 
 其实没什么想说的，但总要写点什么...
@@ -26,7 +25,7 @@ func main() {
 ====
 
 `
-	content = preface + catalog()
+	content = preface + catalog("content")
 	writeMarkDown("README", content)
 	println("READMD.md is rewrited.")
 
@@ -36,18 +35,18 @@ func main() {
 	gitPush()
 }
 
-func catalog() (result string) {
+func catalog(docName string) (result string) {
 	docPath, err := os.Getwd()
 	if err != nil {
 		log.Fatal(err)
 	}
-	mdFiles, err := listDir(docPath+string(os.PathSeparator)+"content", ".md")
+	mdFiles, err := listDir(docPath+string(os.PathSeparator)+docName, ".md")
 	if err != nil {
 		log.Fatal(err)
 	}
 	fileLists := make(map[string]string)
 	for _, v := range mdFiles {
-		if infos, err := os.Stat(docPath + string(os.PathSeparator) + "content" + string(os.PathSeparator) + v); err != nil {
+		if infos, err := os.Stat(docPath + string(os.PathSeparator) + docName + string(os.PathSeparator) + v); err != nil {
 			log.Fatal(err)
 		} else {
 			fileLists[strconv.FormatInt(infos.ModTime().Unix(), 10)] = v
@@ -64,7 +63,7 @@ func catalog() (result string) {
 		if err != nil {
 			log.Fatal(err)
 		}
-		result = result + "* **[" + strings.Replace(readByLine("content/"+fileLists[k], 2), "title: ", "", -1) + "](http://www.yupae.cn/content/" + strings.TrimSuffix(fileLists[k], ".md") + ")** " + time.Unix(fileDate, 0).Format("2006-01-02") + "\n"
+		result = result + "* **[" + strings.Replace(readByLine(docName+string(os.PathSeparator)+fileLists[k], 2), "title: ", "", -1) + "](http://www.yupae.cn/" + docName + "/" + strings.TrimSuffix(fileLists[k], ".md") + ")** " + time.Unix(fileDate, 0).Format("2006-01-02") + "\n"
 	}
 	return
 }
