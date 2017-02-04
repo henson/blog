@@ -16,7 +16,11 @@ var tempDate = time.Now().Format("2006-01-02")
 
 func main() {
 	var preface, content string
-	preface = `序
+	preface = `---
+layout: preface
+---
+
+序
 ===
 
 其实没什么想说的，但总要写点什么...
