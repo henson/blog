@@ -18,7 +18,6 @@ func main() {
 	var preface, content string
 	preface = `序
 ===
-
 其实没什么想说的，但总要写点什么...
 
 目录
@@ -26,9 +25,9 @@ func main() {
 
 `
 	content = preface
-	content = content + "### Golang\n\n" + catalog("golang") + "\n"
-	content = content + "### IoT\n\n" + catalog("iot") + "\n"
-	content = content + "### 杂项\n\n" + catalog("content") + "\n"
+	/*content = content + "### Golang\n" + catalog("golang") + "\n"
+	content = content + "### IoT\n" + catalog("iot") + "\n"*/
+	content = content + catalog("content") + "\n"
 
 	writeMarkDown("README", content)
 	println("READMD.md is rewrited.")
