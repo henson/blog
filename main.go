@@ -26,7 +26,7 @@ func main() {
 
 `
 	content = preface + catalog()
-	writeMarkDown("README.md", content)
+	writeMarkDown("README", content)
 	println("READMD.md is rewrited.")
 
 	//gitPull()

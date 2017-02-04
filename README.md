@@ -6,6 +6,4 @@
 目录
 ====
 
-* **[爬虫常用的浏览器UserAgent](http://yupae.cn/html/useragent)** 2017-2-2
-* **[Github MarkDown语法](http://www.yupae.cn/html/markdown)** 2017-1-13
-* **[Test](http://www.yupae.cn/html/test)** 2016-12-24
+* **[爬虫常用的浏览器 UserAgent](http://www.yupae.cn/content/useragent)** 2017-02-04
