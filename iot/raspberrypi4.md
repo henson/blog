@@ -57,5 +57,3 @@ sudo raspi-config
 
 *   [树莓派(raspberry pi)学习4: 更改键盘布局](http://blog.csdn.net/c80486/article/details/8460271)——修改为PC101布局，普通键盘同样可以使用。
 *   《玩转树莓派 Raspberry Pi》 王江伟等。——书中误写成了PC105键盘，该键盘为欧洲标准和国内使用的键盘不同。
-
-    

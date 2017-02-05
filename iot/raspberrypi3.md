@@ -162,5 +162,3 @@ sudo apt-get install scim-pinyin
 `
 startx
 `
-
-    

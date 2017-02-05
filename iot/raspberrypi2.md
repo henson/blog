@@ -53,5 +53,3 @@ sudo passwd --unlock root
 ```
 
 执行完之后，用 reboot 命令重启就可以用 root 登录啦。
-
-    

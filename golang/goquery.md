@@ -29,21 +29,21 @@ func main() {
                 fmt.Println("Unexpect Error: %v\n", err)
             }
             num := e.Value.(int)
-            fmt.Printf("-&gt; %v\n", num)
+            fmt.Printf("-> %v\n", num)
             queue.TaskDone()
             if num % 3 == 0 {
-                for i := num + 1; i &lt; num + 3; i ++ {
+                for i := num + 1; i < num + 3; i ++ {
                      queue.PutNoWait(i)
                 }
             }
         }
     }
 
-    for i := 0; i &lt;= 27; i += 3 {
+    for i := 0; i <= 27; i += 3 {
         queue.PutNoWait(i)
     }
 
-    for i := 0; i &lt; 5; i++ {
+    for i := 0; i < 5; i++ {
         go worker(queue)
     }
 

@@ -6,11 +6,18 @@
 ====
 
 ### Golang
+* **[Golang 实现的线程安全的队列](http://www.yupae.cn/golang/goquery)** 2017-02-05
 * **[Golang随机字符串生成函数（数字、大小写字母）](http://www.yupae.cn/golang/rand)** 2017-02-05
 * **[Go 语言学习资料与社区索引](http://www.yupae.cn/golang/reference)** 2017-02-05
 * **[Go语言语法详解笔记](http://www.yupae.cn/golang/gogrammar)** 2017-02-05
 
 ### IoT
+* **[树莓派3更改键盘布局](http://www.yupae.cn/iot/raspberrypi4)** 2017-02-05
+* **[树莓派3更换软件源、设置静态IP、激活蓝牙](http://www.yupae.cn/iot/raspberrypi3)** 2017-02-05
+* **[树莓派3 raspi-config 设置](http://www.yupae.cn/iot/raspberrypi2)** 2017-02-05
+* **[树莓派3（Raspberry Pi 3）那点事儿](http://www.yupae.cn/iot/raspberrypi1)** 2017-02-05
+* **[用树莓派3制作智能镜子（MagicMirror）](http://www.yupae.cn/iot/magicmirror)** 2017-02-05
+* **[树莓派3全尺寸](http://www.yupae.cn/iot/raspi-size)** 2017-02-05
 * **[树莓派3使用RTC实时时钟](http://www.yupae.cn/iot/raspiclock)** 2017-02-05
 * **[树莓派3播放Flash](http://www.yupae.cn/iot/raspi-flash)** 2017-02-05
 * **[树莓派3设置python脚本开机启动](http://www.yupae.cn/iot/raspistartup)** 2017-02-05

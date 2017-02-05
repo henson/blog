@@ -8,6 +8,7 @@ title: 树莓派3全尺寸
 ### 树莓派3全尺寸
 
 树莓派长宽高分别为85.60mm x 56mm x 21mm，重45g。
+
 ![树莓派3图](http://www.yupae.cn/images/RASPBERRY PI 3.jpg)
 
 ![树莓派尺寸详图](http://www.yupae.cn/images/raspi-size.png)

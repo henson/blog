@@ -68,5 +68,3 @@ sudo apt-get install libapache2-mod-php5 php5 php-pear php5-xcache
 ### 信息模式（kioskmode）
 
 我们需要魔镜在每次开机后自动进入到界面状态，所以我们要安装一个带信息模式（kioskmode）的浏览器，Linux 下 Chromium 浏览器支持 kioskmode。至于如何安装 Chromium 浏览器以及怎样打开信息模式将在下篇中详细说明。
-
-    
