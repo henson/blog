@@ -2,6 +2,7 @@ package main
 
 import (
 	"bufio"
+	"fmt"
 	"io/ioutil"
 	"log"
 	"os"
@@ -50,12 +51,11 @@ func catalog(docName string) (result string) {
 	fileLists := make(map[string]string)
 	for _, v := range mdFiles {
 		if infos, err := os.Stat(docPath + string(os.PathSeparator) + docName + string(os.PathSeparator) + v); err != nil {
-			log.Fatal(err)
+			fmt.Println(err)
 		} else {
-			fileLists[strconv.FormatInt(infos.ModTime().Unix(), 10)] = v
+			fileLists[strconv.FormatInt(infos.ModTime().UnixNano(), 10)] = v
 		}
 	}
-
 	var keys []string
 	for k := range fileLists {
 		keys = append(keys, k)
@@ -66,7 +66,7 @@ func catalog(docName string) (result string) {
 		if err != nil {
 			log.Fatal(err)
 		}
-		result = result + "* **[" + strings.Replace(readByLine(docName+string(os.PathSeparator)+fileLists[k], 2), "title: ", "", -1) + "](http://www.yupae.cn/" + docName + "/" + strings.TrimSuffix(fileLists[k], ".md") + ")** " + time.Unix(fileDate, 0).Format("2006-01-02") + "\n"
+		result = result + "* **[" + strings.Replace(readByLine(docName+string(os.PathSeparator)+fileLists[k], 2), "title: ", "", -1) + "](http://www.yupae.cn/" + docName + "/" + strings.TrimSuffix(fileLists[k], ".md") + ")** " + time.Unix(0, fileDate).Format("2006-01-02") + "\n"
 	}
 	return
 }
