@@ -5,7 +5,7 @@ title: 树莓派3更换软件源、设置静态IP、激活蓝牙
 
 # 树莓派3更换软件源、设置静态IP、激活蓝牙      
 
-[接上篇《树莓派3 raspi-config 设置》](http://www.yupae.cn/post/raspberrypi2/)
+[接上篇《树莓派3 raspi-config 设置》](http://www.yupae.cn/iot/raspberrypi2/)
 
 ## 更换软件源（apt-get sources）
 

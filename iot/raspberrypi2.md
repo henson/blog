@@ -5,7 +5,7 @@ title: 树莓派3 raspi-config 设置
 
 # 树莓派3 raspi-config 设置      
 
-[接上篇《树莓派3（Raspberry Pi 3）那点事儿》](http://www.yupae.cn/post/raspberrypi1/)
+[接上篇《树莓派3（Raspberry Pi 3）那点事儿》](http://www.yupae.cn/iot/raspberrypi1/)
 
 ## 树莓派 raspi-config 工具
 

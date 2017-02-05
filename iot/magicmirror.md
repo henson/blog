@@ -35,7 +35,7 @@ title: 用树莓派3制作智能镜子（MagicMirror）
 
 ### 屏幕设置
 
-要让魔镜变成纵向的肖像模式，那么必须将屏幕顺时针旋转90度，前篇[《树莓派3（Raspberry Pi 3）那点事儿》](http://www.yupae.cn/post/raspberrypi1/)中已经讲过了怎么旋转屏幕，我们再复习一下。
+要让魔镜变成纵向的肖像模式，那么必须将屏幕顺时针旋转90度，前篇[《树莓派3（Raspberry Pi 3）那点事儿》](http://www.yupae.cn/iot/raspberrypi1/)中已经讲过了怎么旋转屏幕，我们再复习一下。
 
 打开树莓派BIOS设置文件 config.txt 文件，在文件内加上以下一行代码：
 
