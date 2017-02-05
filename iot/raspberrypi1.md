@@ -11,7 +11,7 @@ title: 树莓派3（Raspberry Pi 3）那点事儿
 
 ## 关于树莓派的版本
 
-![树莓派的版本](http://www.yupae.net/images/raspberryforversion.jpg)
+![树莓派的版本](http://www.yupae.cn/images/raspberryforversion.jpg)
 
 树莓派有两个版本，[Element14（易络盟电子）](http://cn.element14.com/)和 [RS（欧时电子）](http://china.rs-online.com/web/)，产地不同而已，Element14是Made in China，RS的是Made in UK，主芯片配置都是完全一样的。某宝上，R版的要E版的贵些，但绝对不是卖家口中的质量差异而只是海外运费的价差而已。
 
@@ -72,7 +72,7 @@ arm_freq=800
 
 关于HDMI分辨率，这里再多说几句，hdmi_group和hdmi_mode一定要找到对应的值（附图是部分分辨率参数值截图）。另外设置好分辨率后，一定要把“hdmi_safe=1”这句用“#”注释掉，要不然HDMI输出的分辨率永远都是640*480。
 
-![部分分辨率参数值](http://www.yupae.net/images/raspberryhdmi.png)
+![部分分辨率参数值](http://www.yupae.cn/images/raspberryhdmi.png)
 
 其它参数意义及其设置，可以参考[http://elinux.org/RPiconfig](http://elinux.org/RPiconfig)上的叙述，也可以参看这篇文章（Reference: [树莓派配置文档 config.txt 说明](http://shumeipai.nxez.com/2015/11/23/raspberry-pi-configuration-file-config-txt-nstructions.html)）。
 
@@ -94,7 +94,7 @@ display_rotate=0x20000  垂直翻转
 
 其实到这里，系统已经算是基本安装配置好了，拔出TF卡插入树莓派背部卡槽，加电，迫不及待的要开机了…
 
-![树莓派供电不足](http://www.yupae.net/images/raspberryblink.jpg)
+![树莓派供电不足](http://www.yupae.cn/images/raspberryblink.jpg)
 
 等一下，屏幕右上角一个彩色的小方块一闪一闪，难道是屏幕坏了吗？其实是树莓派供电不足造成的，当HDMI转VGA转换器、USB集线器、USB键盘等外设通过树莓派取电时就会造成树莓派的供电不足，这时候请一定使用输出5V  2.5A（树莓派2可以使用2A）的电源。连接树莓派的USB外设最好能独立供电，集线器请勿使用反向供电的，反向供电绕过了树莓派上所有自我保护的电路设计，电压电流过高过大易导致烧毁树莓派。
 

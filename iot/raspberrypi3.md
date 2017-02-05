@@ -5,7 +5,7 @@ title: 树莓派3更换软件源、设置静态IP、激活蓝牙
 
 # 树莓派3更换软件源、设置静态IP、激活蓝牙      
 
-[接上篇《树莓派3 raspi-config 设置》](http://www.yupae.net/post/raspberrypi2/)
+[接上篇《树莓派3 raspi-config 设置》](http://www.yupae.cn/post/raspberrypi2/)
 
 ## 更换软件源（apt-get sources）
 
@@ -76,7 +76,7 @@ network 192.168.1.1   # 网络地址
 
 树莓派3是自带WIFI和蓝牙的，以下是专门针对树莓派3的蓝牙功能编写的方法。Pi2和Pi1由于主板无内置蓝牙模块，所以不适用于本教程。
 
-![树莓派3蓝牙设置](http://www.yupae.net/images/raspiblue.png)
+![树莓派3蓝牙设置](http://www.yupae.cn/images/raspiblue.png)
 
 
 ```
@@ -104,7 +104,7 @@ sudo reboot
 
 控制台下蓝牙的连接和使用，用bluetoothctl就可以了：
 
-![树莓派3蓝牙设置](http://www.yupae.net/images/raspibluetooth.png)
+![树莓派3蓝牙设置](http://www.yupae.cn/images/raspibluetooth.png)
 
 大家看到可以使用命令
 

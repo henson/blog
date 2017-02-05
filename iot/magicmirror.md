@@ -23,7 +23,7 @@ title: 用树莓派3制作智能镜子（MagicMirror）
 
 是的，我正是看了这些材料才开始动手做智能镜子的。
 
-![树莓派智能镜子](http://www.yupae.net/images/magicmirror.jpeg)
+![树莓派智能镜子](http://www.yupae.cn/images/magicmirror.jpeg)
 
 是不是很心动？跟我学着做吧，Step by step。
 
@@ -35,7 +35,7 @@ title: 用树莓派3制作智能镜子（MagicMirror）
 
 ### 屏幕设置
 
-要让魔镜变成纵向的肖像模式，那么必须将屏幕顺时针旋转90度，前篇[《树莓派3（Raspberry Pi 3）那点事儿》](http://www.yupae.net/post/raspberrypi1/)中已经讲过了怎么旋转屏幕，我们再复习一下。
+要让魔镜变成纵向的肖像模式，那么必须将屏幕顺时针旋转90度，前篇[《树莓派3（Raspberry Pi 3）那点事儿》](http://www.yupae.cn/post/raspberrypi1/)中已经讲过了怎么旋转屏幕，我们再复习一下。
 
 打开树莓派BIOS设置文件 config.txt 文件，在文件内加上以下一行代码：
 
@@ -48,7 +48,7 @@ display_rotate=1
 要在树莓派上运行 Web 服务就要安装 Apache 服务器，安装之前先更新一下系统，确定用的是最新系统软件（【重要】很多安装错误都可以通过更新解决）。
 
 `
-sudo apt-get update &amp;&amp; apt-get upgrade -y
+sudo apt-get update && apt-get upgrade -y
 `
 
 安装 Apache：

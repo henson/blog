@@ -15,8 +15,8 @@ goqueue 就是来解决这个问题的，参考了 Python 里面的 Queue(Py3 qu
 package main
 
 import (
-"github.com/Damnever/goqueue"
-"fmt"
+    "github.com/Damnever/goqueue"
+    "fmt"
 )
 
 func main() {

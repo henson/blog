@@ -5,13 +5,13 @@ title: 树莓派3 raspi-config 设置
 
 # 树莓派3 raspi-config 设置      
 
-[接上篇《树莓派3（Raspberry Pi 3）那点事儿》](http://www.yupae.net/post/raspberrypi1/)
+[接上篇《树莓派3（Raspberry Pi 3）那点事儿》](http://www.yupae.cn/post/raspberrypi1/)
 
 ## 树莓派 raspi-config 工具
 
 初装系统首次启动过程中，会出现raspi-config界面。
 
-![raspi-config界面](http://www.yupae.net/images/raspiconfig.jpg)
+![raspi-config界面](http://www.yupae.cn/images/raspiconfig.jpg)
 
 用以下命令亦可调出上述界面。
 

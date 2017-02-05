@@ -56,7 +56,7 @@ case "$1" in
     stop)
         echo "Stopping ledblink"
         # killall ledblink.py
-        kill $(ps aux | grep -m 1 &#39;python /home/pi/script/ledblink.py&#39; | awk &#39;{ print $2 }&#39;)
+        kill $(ps aux | grep -m 1 'python /home/pi/script/ledblink.py' | awk '{ print $2 }')
         ;;
     *)
         echo "Usage: sudo /etc/init.d/ledblink start|stop"
@@ -78,11 +78,12 @@ sudo chmod +x /etc/init.d/ledblink
 这样启动该脚本
 
 
-`# 启动
+```
+# 启动
 sudo /etc/init.d/ledblink start
 # 停止
 sudo /etc/init.d/ledblink stop
-`
+```
 
 最后设置开机启动就好了
 

@@ -7,7 +7,7 @@ title: 树莓派3播放Flash
 
 ### Chromium
 
-首先要安装好Chromium浏览器，不知道怎么安装的请看前篇[《树莓派3安装Chromium浏览器》](http://www.yupae.net/post/raspi-chromium/)。
+首先要安装好Chromium浏览器，不知道怎么安装的请看前篇[《树莓派3安装Chromium浏览器》](http://www.yupae.cn/post/raspi-chromium/)。
 
 ### 删除树莓派自带浏览器
 
@@ -77,7 +77,7 @@ sudo nano /etc/Chromium-browser/default
 
 
 `
-CHROMIUM_FLAGS=&#34;--ppapi-flash-path=/usr/lib/Chromium-browser/plugins/libpepflashplayer.so --ppapi-flash-version=12.0.0.77 -password-store=detect -user-data-dir&#34;
+CHROMIUM_FLAGS="--ppapi-flash-path=/usr/lib/Chromium-browser/plugins/libpepflashplayer.so --ppapi-flash-version=12.0.0.77 -password-store=detect -user-data-dir"
 `
 
 进入chromium输入

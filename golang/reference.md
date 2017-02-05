@@ -23,9 +23,6 @@ title: Go 语言学习资料与社区索引
 *   Go 编程语言：102319854
 *   Martini 交流群：371440803
 
-
-
-
 ### 英文社区
 
 *   [golang-nuts 邮件列表](https://groups.google.com/forum/#!forum/golang-nuts)：Go 语言官方指定邮件列表讨论区
@@ -68,11 +65,7 @@ ORM 以及数据库驱动：
 
 *   [Emacs24](http://ftp.gnu.org/gnu/emacs/)：[配置脚本](https://github.com/wackonline/hack/blob/master/install-mint-dev/install-emacs.d.sh) / [(中文社区)](http://emacser.com/)
 *   [LiteIDE](https://github.com/visualfc/liteide)
-*   [Sublime Text 
-2
-⁄
-3
-](http://sublimetext.com)：[配置教程](http://my.oschina.net/Obahua/blog/110767)
+*   [Sublime Text 2⁄3](http://sublimetext.com)：[配置教程](http://my.oschina.net/Obahua/blog/110767)
 *   [IntelliJ IDEA](http://www.jetbrains.com/idea/)
 *   [Atom](https://atom.io)：[配置插件](https://atom.io/packages/go-plus)(感觉还不错，类似sublime，配置比较简单)
 
@@ -94,18 +87,12 @@ ORM 以及数据库驱动：
 *   [How to Use CoreOS on Azure](https://azure.microsoft.com/zh-cn/documentation/articles/virtual-machines-linux-coreos-how-to/)
 *   [Create Azure Web app with GoLang extension](https://azure.microsoft.com/zh-cn/documentation/templates/101-webapp-with-golang/)
 
-
-
-
-
 其它站点：
 
 *   [Golang 杂志](https://flipboard.com/section/the-golang-magazine-bJ1GqB)：[订阅说明](http://bbs.go-china.org/post/476)
 *   [Reddit](http://www.reddit.com/r/golang/)
 *   [Newspaper. IO](http://www.newspaper.io/golang)：Golang 新闻订阅
 *   [Go Newsletter](http://www.golangweekly.com/)：Golang 新闻订阅
-
-
 
 
 ## 资料汇总
@@ -134,9 +121,6 @@ ORM 以及数据库驱动：
 *   [《Go Web基础》](https://github.com/Unknwon/go-web-foundation)
 *   [《Go名库讲解》](https://github.com/Unknwon/go-rock-libraries-showcases)
 
-
-
-
 ### 英文资料
 
 *   [Go Code Review Comments](https://code.google.com/p/go-wiki/wiki/CodeReviewComments)：Go 语言代码风格指导
@@ -153,34 +137,20 @@ ORM 以及数据库驱动：
 *   [Go Programming Blueprints(January 23,2015)](https://www.packtpub.com/application-development/go-programming-blueprints)
 *   [The Go Programming Language(Published Oct 30, 2015,Not Yet Published)](http://www.gopl.io/)
 
-
-
-
 ### 视频资料
 
 *   Go Slices and Bytes - Shakeel Mahate：[优酷视频](http://v.youku.com/v_show/id_XNjkzMjM1Mjg4.html) - [Youtube](http://www.youtube.com/watch?v=dKlNSIUSfz0)
 
-
 COSCUP 2013:
 
 *   Golang &amp; ORM - 林佑安：[优酷视频](http://v.youku.com/v_show/id_XNjkzMTQ1MjYw.html) - [Youtube](http://www.youtube.com/watch?v=VwAtYGyjTks)
-
-
-GopherCon 2014：[Youtube](http://confreaks.com/events/gophercon2014)
-
-
-GopherCon India 2015: [Youtube](https://www.youtube.com/playlist?list=PLxFC1MYuNgJTY3uQ5Ja4F5Sz305nnrBOq)
-
-
-
+*   GopherCon 2014：[Youtube](http://confreaks.com/events/gophercon2014)
+*   GopherCon India 2015: [Youtube](https://www.youtube.com/playlist?list=PLxFC1MYuNgJTY3uQ5Ja4F5Sz305nnrBOq)
 
 ## 职业信息
 
 *   官方网站：[http://www.golangprojects.com/](http://www.golangprojects.com/)
 *   Twitter: [@golangprojects](https://twitter.com/golangprojects)
-
-
-
 
 ## 索引资料
 

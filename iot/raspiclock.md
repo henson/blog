@@ -9,11 +9,11 @@ title: 树莓派3使用RTC实时时钟
 
 ### 购买基于DS3231的RTC时钟模块，并且支持3.3V的那种
 
-![DS3231的RTC时钟模块1](http://www.yupae.net/images/raspberry-pi-real-time-clock-rtc-ds3231-1.jpg)
+![DS3231的RTC时钟模块1](http://www.yupae.cn/images/raspberry-pi-real-time-clock-rtc-ds3231-1.jpg)
 
 ### 配置树莓派
 
-![DS3231的RTC时钟模块2](http://www.yupae.net/images/raspberry-pi-real-time-clock-rtc-ds3231-2.jpg)
+![DS3231的RTC时钟模块2](http://www.yupae.cn/images/raspberry-pi-real-time-clock-rtc-ds3231-2.jpg)
 
 #### 打开树莓派的i2c接口
 

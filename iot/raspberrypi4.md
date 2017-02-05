@@ -5,7 +5,7 @@ title: 树莓派3更改键盘布局
 
 # 树莓派3更改键盘布局      
 
-[接上篇《树莓派3更换软件源、设置静态IP、激活蓝牙》](http://www.yupae.net/post/raspberrypi3/)
+[接上篇《树莓派3更换软件源、设置静态IP、激活蓝牙》](http://www.yupae.cn/post/raspberrypi3/)
 
 ### 导读
 
