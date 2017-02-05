@@ -1,0 +1,80 @@
+package main
+
+import (
+	"bufio"
+	"net/http"
+	"os"
+	"strings"
+
+	"github.com/PuerkitoBio/goquery"
+	"github.com/lunny/html2md"
+)
+
+func main() {
+	URLs := []string{"http://www.yupae.net/", "http://www.yupae.net/page/2/"}
+	var hrefs []string
+	for _, v := range URLs {
+		resp, err := http.Get(v)
+		if err != nil {
+			panic(err)
+		}
+		defer resp.Body.Close()
+		doc, err := goquery.NewDocumentFromReader(resp.Body)
+		if err != nil {
+			panic(err)
+		}
+		doc.Find(".summary h2 a").Each(func(i int, contentSelection *goquery.Selection) {
+			src, _ := contentSelection.Attr("href")
+			hrefs = append(hrefs, src)
+		})
+	}
+
+	for _, v := range hrefs {
+		writeMarkDown(getHTMLtoMD(v))
+	}
+}
+
+func getHTMLtoMD(URL string) (fileName, Output string) {
+	resp, err := http.Get(URL)
+	if err != nil {
+		panic(err)
+	}
+	defer resp.Body.Close()
+	doc, err := goquery.NewDocumentFromReader(resp.Body)
+	if err != nil {
+		panic(err)
+	}
+	title := doc.Find(".article-header h1").Text()
+	content, err := doc.Find("article").Html()
+	if err != nil {
+		panic(err)
+	}
+	md := html2md.Convert(content)
+	var keywords string
+	doc.Find(".meta a").Each(func(i int, contentSelection *goquery.Selection) {
+		keywords += strings.TrimSpace(contentSelection.Text()) + ","
+	})
+	keywords += "yupae.cn"
+	Output = "---\nkeywords: " + keywords + "\ntitle: " + title + "\n---\n\n" + "# " + title + md
+
+	fileName = strings.Split(URL, "/")[4]
+	return
+}
+
+func writeMarkDown(fileName, content string) {
+	// open output file
+	fo, err := os.Create(fileName + ".md")
+	if err != nil {
+		panic(err)
+	}
+	// close fo on exit and check for its returned error
+	defer func() {
+		if err := fo.Close(); err != nil {
+			panic(err)
+		}
+	}()
+	// make a write buffer
+	w := bufio.NewWriter(fo)
+	w.WriteString(content)
+	w.Flush()
+}

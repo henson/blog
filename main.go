@@ -25,8 +25,8 @@ func main() {
 
 `
 	content = preface
-	/*content = content + "### Golang\n" + catalog("golang") + "\n"
-	content = content + "### IoT\n" + catalog("iot") + "\n"*/
+	content = content + "### Golang\n" + catalog("golang") + "\n"
+	content = content + "### IoT\n" + catalog("iot") + "\n"
 	content = content + catalog("content") + "\n"
 
 	writeMarkDown("README", content)
