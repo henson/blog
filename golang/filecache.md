@@ -17,12 +17,13 @@ cache.Start()
 
 调用中使用
 
-    `func FileServer(w http.ResponseWriter, r *http.Request) {
+```
+func FileServer(w http.ResponseWriter, r *http.Request) {
 	path := r.URL.Path
 	if len(path) &gt; 1 {
 		path = path[1:len(path)]
 	} else {
-		path = &#34;.&#34;
+		path = "."
 	}
 	err := cache.WriteFile(w, path)
 	if err == nil {
@@ -31,7 +32,7 @@ cache.Start()
 		DirServer(w, r)
 	}
 }
-`
+```
 
 [http://gokyle.github.com/filecache/](http://gokyle.github.com/filecache/)
 

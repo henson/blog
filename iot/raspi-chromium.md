@@ -10,19 +10,21 @@ title: 树莓派3安装Chromium浏览器
 首先，在这里下载最新版的chromium:
 [http://ports.ubuntu.com/pool/universe/c/chromium-browser/](http://ports.ubuntu.com/pool/universe/c/chromium-browser/)
 
-    `chromium-codecs-ffmpeg-extra_49.0.2623.108-0ubuntu1.1233_armhf.deb
+```
+chromium-codecs-ffmpeg-extra_49.0.2623.108-0ubuntu1.1233_armhf.deb
 chromium-browser-l10n_49.0.2623.108-0ubuntu1.1233_all.deb
 chromium-browser_49.0.2623.108-0ubuntu1.1233_armhf.deb
-`
+```
 
 
 这三个文件应该只是中间的版本号不同，其他的是一样的。然后把这三个文件传入你的树莓派中，比如 ~/deb/chromium，进入这个文件夹，然后运行下面两条命令，恩，换成你自己下载的那个版本的：
 
 
-`sudo dpkg -i chromium-codecs-ffmpeg-extra_49.0.2623.108-0ubuntu1.1233_armhf.deb
+```
+sudo dpkg -i chromium-codecs-ffmpeg-extra_49.0.2623.108-0ubuntu1.1233_armhf.deb
 
 sudo dpkg -i chromium-browser-l10n_49.0.2623.108-0ubuntu1.1233_all.deb chromium-browser_49.0.2623.108-0ubuntu1.1233_armhf.deb
-`
+```
 
 
 这样 chromium 就安装好了。然后安装屏蔽鼠标的软件：
@@ -64,11 +66,12 @@ sudo nano ~/.config/lxsession/LXDE-pi/autostart
 还加入了以下代码：
 
 
-`@xset s off
+```
+@xset s off
 @xset -dpms
 @xset s noblank
 @chromium-browser --kiosk --incognito http://localhost
-`
+```
 
 这样就能完全禁用所有屏保功能，Chromium 浏览器也将在开机后自动启动，开启全屏模式并导向本地主页。
 

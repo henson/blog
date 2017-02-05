@@ -5,15 +5,16 @@ title: Base64加密解密
 
 # Base64加密解密      
 
-    `package main
+```
+package main
 
 import (
-    &#34;encoding/base64&#34;
-    &#34;fmt&#34;
+    "encoding/base64"
+    "fmt"
 )
 
 const (
-    base64Table = &#34;123QRSTUabcdVWXYZHijKLAWDCABDstEFGuvwxyzGHIJklmnopqr234560178912&#34;
+    base64Table = "123QRSTUabcdVWXYZHijKLAWDCABDstEFGuvwxyzGHIJklmnopqr234560178912"
 )
 
 var coder = base64.NewEncoding(base64Table)
@@ -28,7 +29,7 @@ func base64Decode(src []byte) ([]byte, error) {
 
 func main() {
     // encode   
-    hello := &#34;hello world&#34;
+    hello := "hello world"
     debyte := base64Encode([]byte(hello))
 
     // decode   
@@ -38,11 +39,11 @@ func main() {
     }
 
     if hello != string(enbyte) {
-        fmt.Println(&#34;hello is not equal to enbyte&#34;)
+        fmt.Println("hello is not equal to enbyte")
     }
 
     fmt.Println(string(enbyte))
 }
-`
+```
 
     

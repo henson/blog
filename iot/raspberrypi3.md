@@ -19,20 +19,21 @@ sudo nano /etc/apt/sources.list
 
 进入编辑界面，删除原有的内容，粘贴镜像主页提供的内容，结果如下：
 
-    `deb http://mirrors.aliyun.com/raspbian/raspbian/ wheezy main non-free contrib rpi
+```
+deb http://mirrors.aliyun.com/raspbian/raspbian/ wheezy main non-free contrib rpi
 deb-src http://mirrors.aliyun.com/raspbian/raspbian/ wheezy main non-free contrib rpi
-`
+```
 
 
 其中wheezy是版本号，早期的版本是wheezy，如果你下载的是最新的，那么版本号应该改成jessie。然后使用 Ctrl+O 保存文件，Ctrl+X 退出编辑器。
 
-
-`// 更新软件索引清单
+```
+// 更新软件索引清单
 sudo apt-get update
 
 // 比较索引清单更新依赖关系
 sudo apt-get upgrade -y
-`
+```
 
 
 ## 设置静态 IP 地址
@@ -45,18 +46,18 @@ sudo nano /etc/network/interfaces
 
 如果你要设置的是有线网卡的 IP 地址，那么把 eth0 的 dhcp 改成 static 然后在下一行追加 IP 信息，结果大概如下：
 
-
-`iface eth0 inet static
+```
+iface eth0 inet static
 address 192.168.1.200   # 设定的静态IP地址
 netmask 255.255.255.0   # 网络掩码
 gateway 192.168.1.1     # 网关
-`
+```
 
 
 如果你要设置的是无线网卡的，那么除了把 wlan0 的 dhcp 改成 static 之外，还需要填写无线网的名称和密码，编辑后的结果大概如下：
 
-
-`iface wlan0 inet static
+```
+iface wlan0 inet static
     wpa-ssid Your_Wifi_SSID
     wpa-psk Your_Wifi_Password
 address 192.168.1.200 # 设定的静态IP地址
@@ -64,7 +65,7 @@ netmask 255.255.255.0 # 网络掩码
 gateway 192.168.1.1   # 网关
 network 192.168.1.1   # 网络地址
 #wpa-roam /etc/wpa_supplicant/wpa_supplicant.conf
-`
+```
 
 
 ▲ 注意：注释掉最后一行
@@ -78,25 +79,27 @@ network 192.168.1.1   # 网络地址
 ![树莓派3蓝牙设置](http://www.yupae.net/images/raspiblue.png)
 
 
-`// 更新软件源及升级软件（如果前面做过了可以忽略）
+```
+// 更新软件源及升级软件（如果前面做过了可以忽略）
 sudo apt-get update
 sudo apt-get updgrade -y
 sudo apt-get dist-upgrade -y
 
 // 安装蓝牙软件包
 sudo apt-get install pi-bluetooth bluez bluez-firmware blueman
-`
+```
 
 
 最关键一点，
 
 
-`// 添加pi用户到蓝牙组
+```
+// 添加pi用户到蓝牙组
 sudo usermod -G bluetooth -a pi
 
 // 重启
 sudo reboot
-`
+```
 
 
 控制台下蓝牙的连接和使用，用bluetoothctl就可以了：
@@ -106,7 +109,8 @@ sudo reboot
 大家看到可以使用命令
 
 
-`agent on
+```
+agent on
 default-agent
 
 // 用scan on之后，就可以看到扫描得到的蓝牙设备的物理地址了，格式XX:XX:XX:XX:XX:XX
@@ -123,7 +127,7 @@ connect XX:XX:XX:XX:XX:XX
 
 // 最后quit退出就可以了
 quit
-`
+```
 
 以后蓝牙设备开机后，树莓派会自动进行连接。
 

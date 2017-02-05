@@ -9,7 +9,7 @@ title: 用树莓派3制作智能镜子（MagicMirror）
 
 ### 相关链接
 
-*   [Magic Mirrors around the World!](http://michaelteeuw.nl/post/111886383522/magic-mirrors-around-the-world) via Xonay Labs | [Michael Teeuw](http://michaelteeuw.nl/tagged/magicmirror) 项目地址：[https://github.com/MichMich/MagicMirror](https://github.com/MichMich/MagicMirror)
+*   [Magic Mirrors around the World!](http://michaelteeuw.nl/post/111886383522/magic-mirrors-around-the-world) via Xonay Labs , [Michael Teeuw](http://michaelteeuw.nl/tagged/magicmirror) 项目地址：[https://github.com/MichMich/MagicMirror](https://github.com/MichMich/MagicMirror)
 *   [My Bathroom Mirror Is Smarter Than Yours](https://medium.com/@maxbraun/my-bathroom-mirror-is-smarter-than-yours-94b21c6671ba#.1kttvbngz) （需要翻墙，[国内译文《Google 软件工程师自制智能镜》](http://36kr.com/p/5043096.html)）
 *   [Android application powering the mirror in my house](https://github.com/HannahMitt/HomeMirror) 项目地址：[https://github.com/HannahMitt/HomeMirror](https://github.com/HannahMitt/HomeMirror)
 *   [Smart Mirror Hardware](http://konkludenz.de/smart-mirror-hardware/) via Konkludenz （需要翻墙，德语）

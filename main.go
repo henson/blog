@@ -28,7 +28,7 @@ func main() {
 	content = preface
 	content = content + "### Golang\n" + catalog("golang") + "\n"
 	content = content + "### IoT\n" + catalog("iot") + "\n"
-	content = content + catalog("content") + "\n"
+	content = content + "### Others\n" + catalog("content") + "\n"
 
 	writeMarkDown("README", content)
 	println("READMD.md is rewrited.")

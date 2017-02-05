@@ -5,12 +5,13 @@ title: Golang随机字符串生成函数（数字、大小写字母）
 
 # Golang随机字符串生成函数（数字、大小写字母）      
 
-    `package main
+```
+package main
 
 import(
-    &#34;fmt&#34;
-    &#34;time&#34;
-    &#34;math/rand&#34;
+    "fmt"
+    "time"
+    "math/rand"
 )
 
 const (
@@ -36,11 +37,11 @@ func Krand(size int, kind int) []byte {
 }
 
 func main(){
-    fmt.Println(&#34;num:   &#34; + string(Krand(16, KC_RAND_KIND_NUM)))
-    fmt.Println(&#34;lower: &#34; + string(Krand(16, KC_RAND_KIND_LOWER)))
-    fmt.Println(&#34;upper: &#34; + string(Krand(16, KC_RAND_KIND_UPPER)))
-    fmt.Println(&#34;all:   &#34; + string(Krand(16, KC_RAND_KIND_ALL)))
+    fmt.Println("num:   " + string(Krand(16, KC_RAND_KIND_NUM)))
+    fmt.Println("lower: " + string(Krand(16, KC_RAND_KIND_LOWER)))
+    fmt.Println("upper: " + string(Krand(16, KC_RAND_KIND_UPPER)))
+    fmt.Println("all:   " + string(Krand(16, KC_RAND_KIND_ALL)))
 }
-`
+```
 
     

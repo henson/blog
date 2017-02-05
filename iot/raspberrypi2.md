@@ -21,7 +21,8 @@ title: 树莓派3 raspi-config 设置
 
 进入系统设置界面进行设置，第1步必须做，其它根据自己需要设置。
 
-    `1、Expand Filesystem：将系统扩展到整个TF卡，必须执行，一路敲回车即可；
+```
+1、Expand Filesystem：将系统扩展到整个TF卡，必须执行，一路敲回车即可；
 2、Change User Password：修改密码及账号，若要修改，请牢记；
 3、Boot Options：启动选项，选“desktop”，下次启动将直接进入桌面系统；
 4、Wait for Network at Boot：等待网络唤醒，服务器模式；
@@ -31,7 +32,7 @@ title: 树莓派3 raspi-config 设置
 8、Overclock：超频，一般不超频，若要超频请谨慎操作，并做好散热；
 9、Advanced Options：高级选项，包括Overscan、Hostname、Memory Split（内存分配）、SSH等；
 0、About raspi-config：本机相关信息。
-`
+```
 
 
 设置完成后，树莓派自动重启。
@@ -43,12 +44,13 @@ title: 树莓派3 raspi-config 设置
 为了方便折腾，建议第一时间启用 ROOT 账号。这个也很简单的，只需要执行一下两句命令即可：
 
 
-`// 设置 root 账号的密码，会让你输入两次新密码
+```
+// 设置 root 账号的密码，会让你输入两次新密码
 sudo passwd root
 
 // 启用 root 账号登录
 sudo passwd --unlock root
-`
+```
 
 执行完之后，用 reboot 命令重启就可以用 root 登录啦。
 

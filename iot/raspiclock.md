@@ -29,9 +29,10 @@ sudo nano /etc/modules
 
 然后添加以下两行内容：
 
-    `i2c-bcm2708
+```
+i2c-bcm2708
 i2c-dev
-`
+```
 
 
 #### 安装i2c工具，查看i2c设备b
@@ -46,8 +47,8 @@ sudo apt-get install i2c-tools
 sudo i2cdetect -y -a 1
 `
 
-
-`     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+```
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
 00:          -- -- -- -- -- -- -- -- -- -- -- -- --
 10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
 20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
@@ -56,7 +57,7 @@ sudo i2cdetect -y -a 1
 50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
 60: -- -- -- -- -- -- -- -- 68 -- -- -- -- -- -- --
 70: -- -- -- -- -- -- -- --
-`
+```
 
 
 显示的地址就是我们需要使用的，树莓派一般是68
@@ -68,20 +69,22 @@ sudo nano /etc/rc.local
 `
 
 
-`// 将以下内容加入“exit 0”行之前
+```
+// 将以下内容加入“exit 0”行之前
 sudo modprobe i2c-dev
 sudo modprobe i2c-bcm2708
 echo ds3231 0x68 | sudo tee  /sys/class/i2c-adapter/i2c-1/new_device
 sudo hwclock -s
-`
+```
 
 
 ### hwclock命令介绍
 
 
-`sudo hwclock -r     #读时钟
+```
+sudo hwclock -r     #读时钟
 sudo hwclock -s     #写时钟
-`
+```
 
 ### Remove fake-hwclock
 

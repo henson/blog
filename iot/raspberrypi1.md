@@ -50,14 +50,15 @@ title: 树莓派3（Raspberry Pi 3）那点事儿
 
 在Windows环境下进入TF卡，找到文件config.txt，使用文本工具打开，依次将下面项目的“值”修改为等号后的数值，并去掉前面的“#”：
 
-    `hdmi_force_hotplug=1
+```
+hdmi_force_hotplug=1
 hdmi_group=2
 hdmi_mode=16
 hdmi_drive=2
 config_hdmi_boost=0
 sdtv_mode=2
 arm_freq=800  
-`
+```
 
 
 解释：
@@ -80,13 +81,14 @@ arm_freq=800
 相信认真看了上述材料的童鞋已经知道了如何设置屏幕的翻转。对，使用 display_rotate 设置，按顺时针旋转屏幕（默认为0）。
 
 
-`display_rotate=0        正常
+```
+display_rotate=0        正常
 display_rotate=1        90度
 display_rotate=2        180度
 display_rotate=3        270度
 display_rotate=0x10000  水平翻转
 display_rotate=0x20000  垂直翻转
-`
+```
 
 ## 关于屏幕右上角的彩色块
 

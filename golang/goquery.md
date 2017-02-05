@@ -11,11 +11,12 @@ goqueue 就是来解决这个问题的，参考了 Python 里面的 Queue(Py3 qu
 
 详见 [https://github.com/Damnever/goqueue](https://github.com/Damnever/goqueue)
 
-    `package main
+```
+package main
 
 import (
-&#34;github.com/Damnever/goqueue&#34;
-&#34;fmt&#34;
+"github.com/Damnever/goqueue"
+"fmt"
 )
 
 func main() {
@@ -25,10 +26,10 @@ func main() {
         for {
             e, err := queue.Get(true, 0)
             if err != nil {
-                fmt.Println(&#34;Unexpect Error: %v\n&#34;, err)
+                fmt.Println("Unexpect Error: %v\n", err)
             }
             num := e.Value.(int)
-            fmt.Printf(&#34;-&gt; %v\n&#34;, num)
+            fmt.Printf("-&gt; %v\n", num)
             queue.TaskDone()
             if num % 3 == 0 {
                 for i := num + 1; i &lt; num + 3; i ++ {
@@ -47,8 +48,8 @@ func main() {
     }
 
     queue.WaitAllComplete()
-    fmt.Println(&#34;All task done!!!&#34;)
+    fmt.Println("All task done!!!")
 }
-`
+```
 
     

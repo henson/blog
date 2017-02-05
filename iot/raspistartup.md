@@ -11,7 +11,8 @@ title: 树莓派3设置python脚本开机启动
 
 文件保存在/home/pi/script/ledblink.py
 
-    `#!/usr/bin/env python
+```
+#!/usr/bin/env python
 
 import RPi.GPIO as GPIO
 import time
@@ -25,16 +26,16 @@ while True:
     time.sleep(1)
   except (KeyboardInterrupt, SystemExit):
     GPIO.close()
-    print &#34;exit&#34;
-`
+    print "exit"
+```
 
 
 ### 开机启动脚本
 
 保存脚本为/etc/init.d/ledblink文件
 
-
-`#!/bin/bash
+```
+#!/bin/bash
 # /etc/init.d/ledblink
 
 ### BEGIN INIT INFO
@@ -47,23 +48,23 @@ while True:
 # Description: This service is used to manage a led
 ### END INIT INFO
 
-case &#34;$1&#34; in
+case "$1" in
     start)
-        echo &#34;Starting LED Blink&#34;
+        echo "Starting LED Blink"
         python /home/pi/script/ledblink.py &amp;
         ;;
     stop)
-        echo &#34;Stopping ledblink&#34;
+        echo "Stopping ledblink"
         # killall ledblink.py
         kill $(ps aux | grep -m 1 &#39;python /home/pi/script/ledblink.py&#39; | awk &#39;{ print $2 }&#39;)
         ;;
     *)
-        echo &#34;Usage: sudo /etc/init.d/ledblink start|stop&#34;
+        echo "Usage: sudo /etc/init.d/ledblink start|stop"
         exit 1
         ;;
 esac
 exit 0
-`
+```
 
 
 ### 设置python脚本开机启动
