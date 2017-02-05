@@ -7,7 +7,7 @@ title: 树莓派3播放Flash
 
 ### Chromium
 
-首先要安装好Chromium浏览器，不知道怎么安装的请看前篇[《树莓派3安装Chromium浏览器》](http://www.yupae.cn/iot/raspi-chromium/)。
+首先要安装好Chromium浏览器，不知道怎么安装的请看前篇[《树莓派3安装Chromium浏览器》](http://www.yupae.cn/iot/raspi-chromium)。
 
 ### 删除树莓派自带浏览器
 
