@@ -24,6 +24,7 @@
 * **[树莓派3安装Chromium浏览器](http://www.yupae.cn/iot/raspi-chromium)** 2017-02-05
 
 ### Others
+* **[开机自动执行脚本 与 update-rc.d](http://www.yupae.cn/content/linuxstart)** 2017-02-06
 * **[Github MarkDown语法](http://www.yupae.cn/content/markdown)** 2017-02-04
 * **[爬虫常用的浏览器UserAgent](http://www.yupae.cn/content/useragent)** 2017-02-04
 
