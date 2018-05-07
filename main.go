@@ -28,7 +28,7 @@ func main() {
 ![界面](http://yupae.cn/images/screen.jpg)
 `
 	content = preface + catalog("_posts") + "\n"
-	content += "\n最后更新时间: " + time.Now().Format("2006-01-02 15:04:05") + "\n"
+	content += "最后更新时间: " + time.Now().Format("2006-01-02 15:04:05") + "\n"
 	content += screen
 
 	writeMarkDown("README", content)
