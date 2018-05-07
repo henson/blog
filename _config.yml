@@ -49,7 +49,6 @@ postPatterns: 'circuitBoard'
 # SNS settings 配置社交网站
 # url: email, weibo, zhihu, twitter, instagram, juejin, github, douban, facebook, dribble, uicn, jianshu, medium, linkedin
 sns:
-  email: 'henson.lu@gmail.com'
   weibo: '//weibo.com/henson'
   twitter: '//twitter.com/hensonlu'
   github: '//github.com/henson'
