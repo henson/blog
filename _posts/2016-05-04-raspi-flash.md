@@ -8,7 +8,7 @@ tags: 树莓派 Raspberry flash
 
 ### Chromium
 
-首先要安装好Chromium浏览器，不知道怎么安装的请看前篇[《树莓派3安装Chromium浏览器》](http://www.yupae.cn/2016-04-23-raspi-chromium)。
+首先要安装好Chromium浏览器，不知道怎么安装的请看前篇[《树莓派3安装Chromium浏览器》](http://www.yupae.cn/2016/04/23/raspi-chromium.html)。
 
 ### 删除树莓派自带浏览器
 

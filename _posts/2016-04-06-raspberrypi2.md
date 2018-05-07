@@ -7,7 +7,7 @@ cover: 'http://www.yupae.cn/images/raspiconfig.jpg'
 tags: 树莓派 Raspberry Raspbian
 ---
 
-[接上篇《树莓派3（Raspberry Pi 3）那点事儿》](http://www.yupae.cn/2016-04-05-raspberrypi1)
+[接上篇《树莓派3（Raspberry Pi 3）那点事儿》](http://www.yupae.cn/2016/04/05/raspberrypi1.html)
 
 ## 树莓派 raspi-config 工具
 

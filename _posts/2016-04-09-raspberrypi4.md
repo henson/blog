@@ -6,7 +6,7 @@ categories: 树莓派
 tags: 树莓派 Raspberry Raspbian
 ---
 
-[接上篇《树莓派3更换软件源、设置静态IP、激活蓝牙》](http://www.yupae.cn/2016-04-07-raspberrypi3)
+[接上篇《树莓派3更换软件源、设置静态IP、激活蓝牙》](http://www.yupae.cn/2016/04/07/raspberrypi3.html)
 
 ### 导读
 

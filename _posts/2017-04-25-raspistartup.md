@@ -12,7 +12,7 @@ tags: 树莓派 Raspberry python
 
 文件保存在/home/pi/script/ledblink.py
 
-```
+```python
 #!/usr/bin/env python
 
 import RPi.GPIO as GPIO
