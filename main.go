@@ -58,9 +58,9 @@ func catalog(docName string) (result string) {
 		keys = append(keys, k)
 	}
 	sort.Sort(sort.Reverse(sort.StringSlice(keys)))
-	for _, k := range keys {
+	for i, k := range keys {
 		pathname := strings.SplitN(fileLists[k][0], "-", 4)
-		result = result + "* **[" + fileLists[k][1] + "](http://yupae.cn/" + strings.Replace(strings.Replace(strings.Trim(fmt.Sprint(pathname), "[]"), " ", "/", -1), ".md", ".html", 1) + ")** " + fileLists[k][2] + "\n"
+		result = result + strconv.Itoa(i+1) + ". **[" + fileLists[k][1] + "](http://yupae.cn/" + strings.Replace(strings.Replace(strings.Trim(fmt.Sprint(pathname), "[]"), " ", "/", -1), ".md", ".html", 1) + ")** " + fileLists[k][2] + "\n"
 	}
 	return
 }
