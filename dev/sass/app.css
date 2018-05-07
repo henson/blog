@@ -108,7 +108,7 @@ a {
         color: #666;
         padding: 0 12px;
         opacity: .8;
-        text-shadow: 0 1px 1px rgba(255, 255, 255, 0.6); }
+        text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8); }
         .g-header .g-nav > ul > li > a:hover {
           opacity: 1; }
   .g-header .nav-default a:hover {
