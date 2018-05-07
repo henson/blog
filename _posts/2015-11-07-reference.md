@@ -6,8 +6,6 @@ categories: Golang
 tags: Golang Reference
 ---
 
-# Go 语言学习资料与社区索引      
-
 **最后更新时间**：2015 年 10 月 13 日
 
 ## 交流社区

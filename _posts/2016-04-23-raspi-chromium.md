@@ -6,8 +6,6 @@ categories: 树莓派
 tags: 树莓派 Raspberry Chromium
 ---
 
-# 树莓派3安装Chromium浏览器      
-
 ### 安装Chromium浏览器
 
 首先，在这里下载最新版的chromium:

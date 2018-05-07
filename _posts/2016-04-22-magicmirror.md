@@ -7,8 +7,6 @@ cover: 'http://www.yupae.cn/images/magicmirror.jpeg'
 tags: 树莓派 Raspberry MagicMirror
 ---
 
-# 用树莓派3制作智能镜子（MagicMirror）      
-
 根据前面的文章，树莓派3已经配置好了，我们拿它来做点什么呢？这里有几篇文章不妨先看下：
 
 ### 相关链接

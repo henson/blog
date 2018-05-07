@@ -7,8 +7,6 @@ cover: 'https://www.raspberrypi.org/app/uploads/2017/05/Raspberry-Pi-3-1-1619x10
 tags: 树莓派 Raspberry Raspbian
 ---
 
-# 树莓派3（Raspberry Pi 3）那点事儿      
-
 核心内容导读：树莓派版本、USB系统烧录、HDMI分辨率设置、屏幕翻转、超频设置
 
 入手了一个树莓派3（[RASPBERRY PI 3 MODEL B](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/)），捣鼓了一阵子感觉还不错。其实细搜一下，关于树莓派的教程网上是有很多的，当然这其中的坑也有很多。另外，大部分教程是关于树莓派2的，所以特地开个篇把树莓派3（Raspberry Pi 3）那点事儿和踩过的坑统统记下来。
