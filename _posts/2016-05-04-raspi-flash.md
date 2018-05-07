@@ -82,9 +82,11 @@ CHROMIUM_FLAGS="--ppapi-flash-path=/usr/lib/Chromium-browser/plugins/libpepflash
 `
 
 进入chromium输入
+
 `
 chrome://plugins
 `
+
 查看flash是否添加到插件里，是否开启。
 
     
