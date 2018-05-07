@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Go语言语法详解笔记
+title: Go 语言语法详解笔记
 date: 2015-06-26
 categories: Golang
 tags: Golang 语法
