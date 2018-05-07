@@ -3,7 +3,6 @@ title: '汉僧学报'
 description: '专注于Golang、Python、树莓派Raspberry Pi的开发和应用。'
 keyword: 'golang, python, raspberry pi, raspi, 树莓派, 程序'
 url: 'http://yupae.cn' # your host
-cover: 'http://yupae.cn/assets/img/headline.jpg'
 
 # if you don't need baseurl, you should leave this value blank.
 baseurl: ''
