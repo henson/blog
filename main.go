@@ -17,7 +17,11 @@ var tempDate = time.Now().Format("2006-01-02")
 
 func main() {
 	var preface, content string
-	preface = `目录
+	preface = `界面
+===
+![界面](http://yupae.cn/images/screen.jpg)
+	
+目录
 ===
 
 `
