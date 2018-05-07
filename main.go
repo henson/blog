@@ -19,11 +19,11 @@ func main() {
 	var preface, content string
 	preface = `# 汉僧学报
 	
-## 界面
+### 界面
 
 ![界面](http://yupae.cn/images/screen.jpg)
 	
-## 目录
+### 目录
 
 `
 	content = preface + catalog("_posts") + "\n"
