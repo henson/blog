@@ -17,7 +17,7 @@ var tempDate = time.Now().Format("2006-01-02")
 
 func main() {
 	var preface, content string
-	preface = `目录
+	preface = `### 目录
 ====
 
 `
