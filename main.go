@@ -17,11 +17,12 @@ var tempDate = time.Now().Format("2006-01-02")
 
 func main() {
 	var preface, content string
-	preface = `### 目录
-====
+	preface = `目录
+===
 
 `
 	content = preface + catalog("_posts") + "\n"
+	content += "\n最后更新时间: " + time.Now().Format("2006-01-02 15:04:05") + "\n"
 
 	writeMarkDown("README", content)
 	println("READMD.md is rewrited.")
