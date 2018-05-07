@@ -135,7 +135,7 @@ a {
   .home-banner h2, .home-banner h3 {
     position: relative;
     z-index: 1;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2); }
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.6); }
   .home-banner h2 {
     padding-top: 190px;
     line-height: 38px;
