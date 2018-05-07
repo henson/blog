@@ -16,18 +16,20 @@ import (
 var tempDate = time.Now().Format("2006-01-02")
 
 func main() {
-	var preface, content string
+	var preface, content, screen string
 	preface = `# 汉僧学报
-	
+
+## 目录
+
+`
+	screen = `
 ### 界面
 
 ![界面](http://yupae.cn/images/screen.jpg)
-	
-### 目录
-
 `
 	content = preface + catalog("_posts") + "\n"
 	content += "\n最后更新时间: " + time.Now().Format("2006-01-02 15:04:05") + "\n"
+	content += screen
 
 	writeMarkDown("README", content)
 	println("READMD.md is rewrited.")
