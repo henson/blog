@@ -35,7 +35,7 @@ func main() {
 	println("READMD.md is rewrited.")
 
 	//gitPull()
-	gitAddAll()
+	//gitAddAll()
 	gitCommit()
 	gitPush()
 }
@@ -179,7 +179,7 @@ func gitAddAll() {
 func gitCommit() {
 	app := "git"
 	arg0 := "commit"
-	arg1 := "-m"
+	arg1 := "-am"
 	arg2 := tempDate
 	cmd := exec.Command(app, arg0, arg1, arg2)
 	out, err := cmd.Output()
