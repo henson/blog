@@ -55,6 +55,7 @@ sns:
   twitter: '//twitter.com/hensonlu'
   douban: '//www.douban.com/people/hensonlu'
   jianshu: '//www.jianshu.com/users/2c92420a8737'
+  medium: '//medium.com/@hensonlu'
 
 # Tags 设置标签
 recommend-tags: true # whether or not display recommend-tags on the sidebar
