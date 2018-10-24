@@ -20,7 +20,7 @@ git clone https://github.com/golang/tools.git $GOPATH/src/github.com/golang/tool
 git clone https://github.com/golang/crypto.git $GOPATH/src/github.com/golang/crypto
 git clone https://github.com/golang/sync.git $GOPATH/src/github.com/golang/sync
 git clone https://github.com/golang/time.git $GOPATH/src/github.com/golang/time
-git clone https:/github.com/golang/image.git $GOPATH/src/github.com/golang/image
+git clone https://github.com/golang/image.git $GOPATH/src/github.com/golang/image
 
 
 ln -s $GOPATH/src/github.com/golang/ $GOPATH/src/golang.org/x
