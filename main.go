@@ -34,8 +34,8 @@ func main() {
 	writeMarkDown("README", content)
 	println("READMD.md is rewrited.")
 
-	//gitPull()
-	//gitAddAll()
+	gitPull()
+	gitAddAll()
 	gitCommit()
 	gitPush()
 }
